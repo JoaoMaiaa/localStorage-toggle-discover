@@ -1,30 +1,21 @@
 let toggle = document.getElementById('toggle')
 
-toggle.addEventListener('click', ()=>{
-    let body = document.getElementsByTagName('body')
-    let icon = document.getElementsByTagName('i')
-    let button = document.getElementsByTagName('button')
+let body = document.getElementsByTagName('body')
+let icon = document.getElementsByTagName('i')
+let button = document.getElementsByTagName('button')
 
+toggle.addEventListener('click', (e)=>{
     body[0].classList.toggle('is-dark')
     body[0].classList.remove('is-light')
     button[0].classList.toggle('is-light')
     icon[0].classList.toggle('fa-sun')
     icon[0].classList.add('fa-moon')
-
-    // body
-    // if(body){
-    //     body[0].classList.toggle('is-dark')
-    //     body[0].classList.remove('is-light')
-    //     button[0].classList.toggle('is-light')
-    //     icon[0].classList.toggle('fa-sun')
-    //     icon[0].classList.add('fa-moon')
-    // }else{
-    //     body[0].classList.toggle('is-light')
-    //     body[0].classList.remove('is-dark')
-    //     button[0].classList.toggle('is-dark')
-    //     icon[0].classList.toggle('fa-sun')
-    //     icon[0].classList.add('fa-sun')
-    // }
-    // outra possibilidade
     
+    if (e.target.classList[4] == 'is-light' || icon[0].classList[2] == 'fa-sun'){
+        localStorage.setItem('code', true)
+        console.log('true')
+    }else{ 
+        console.log('false')
+        localStorage.setItem('code', false)
+    }
 })
